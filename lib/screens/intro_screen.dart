@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:globo_fitness/main.dart';
 import 'package:globo_fitness/shared/menu_drawer.dart';
-import '../shared/menu_bottom.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -12,7 +10,23 @@ class IntroScreen extends StatelessWidget {
         home: Scaffold(
       appBar: AppBar(title: Text('Globo Fitness')),
       drawer: MenuDrawer(),
-      bottomNavigationBar: MenuBottom(),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              Navigator.pushNamed(context, '/');
+              break;
+            case 1:
+              Navigator.pushNamed(context, '/bmi');
+              break;
+          }
+        },
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.monitor_weight), label: 'BMI'),
+        ],
+      ),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
