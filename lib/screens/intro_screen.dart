@@ -9,7 +9,10 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(title: Text('Globo Fitness')),
+      appBar: AppBar(
+        title: Text('Globo Fitness'),
+        backgroundColor: Colors.black,
+      ),
       drawer: MenuDrawer(),
       bottomNavigationBar: MenuBottom(),
       body: Container(
@@ -32,7 +35,7 @@ class IntroScreen extends StatelessWidget {
                     Shadow(
                       offset: Offset(1.0, 1.0),
                       blurRadius: 2.0,
-                      color: Colors.green,
+                      color: Colors.blue,
                     )
                   ]),
                 ))),
